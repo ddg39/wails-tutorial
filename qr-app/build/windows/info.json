@@ -1,0 +1,15 @@
+{
+	"fixed": {
+		"file_version": "0.1.0"
+	},
+	"info": {
+		"0409": {
+			"ProductVersion": "0.1.0",
+			"CompanyName": "none",
+			"FileDescription": "A qr-app application",
+			"LegalCopyright": "© 2026, none",
+			"ProductName": "My Product",
+			"Comments": "This is a comment"
+		}
+	}
+}
