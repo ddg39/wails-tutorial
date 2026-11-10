@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"qr-app/internal"
 
 	"log"
 	"time"
@@ -39,6 +40,7 @@ func main() {
 		Description: "A demo of using raw HTML & CSS",
 		Services: []application.Service{
 			application.NewService(&GreetService{}),
+			application.NewService(internal.NewQRService()),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
