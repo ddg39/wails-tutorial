@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { QRService } from '../bindings/qr-app/internal'
 
 async function generateQR(text: string): Promise<string | null> {
   if (!text) {
@@ -8,9 +7,7 @@ async function generateQR(text: string): Promise<string | null> {
   }
 
   try {
-    const qrCodeBase64 = await QRService.Generate(text, 256)
-
-    const qrSrc = `data:image/png;base64,${qrCodeBase64}`
+    const qrSrc = `/qrservice?text=${encodeURIComponent(text)}`
     return qrSrc
   } catch (err) {
     console.error('Failed to generate QR code:', err)

@@ -40,7 +40,9 @@ func main() {
 		Description: "A demo of using raw HTML & CSS",
 		Services: []application.Service{
 			application.NewService(&GreetService{}),
-			application.NewService(internal.NewQRService()),
+			application.NewServiceWithOptions(internal.NewQRService(), application.ServiceOptions{
+				Route: "/qrservice",
+			}),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
